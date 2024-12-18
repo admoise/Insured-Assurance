@@ -1,22 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.insuredassurance</groupId>
     <artifactId>insuredassurance</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
     <dependencies>
+        <!-- Jakarta Servlet API dependency for JDK 11 and later -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
-            <version>5.0.0</version>
+            <version>5.0.0</version> <!-- Use Jakarta Servlet API for JDK 11+ -->
             <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Maven Compiler Plugin for JDK 21 compatibility -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -27,6 +30,7 @@
                 </configuration>
             </plugin>
 
+            <!-- Maven WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
