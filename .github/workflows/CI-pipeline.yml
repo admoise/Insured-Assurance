@@ -21,7 +21,7 @@ jobs:
       run: mvn clean package
     - name: Upload Artifact
       if: success()  # Only execute if previous steps were successful
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: insured-assurance-war
         path: "/target/insuredassurance-1.0.war"
