@@ -20,10 +20,10 @@ jobs:
         maven-version: 3.9.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Upload Artifact
+    - name: Trigger Jenkins Pipeline
       if: success()  # Only execute if previous steps were successful
-      uses: actions/upload-artifact@v4
-      with:
-        name: insured-assurance-war
-        path: "target/insuredassurance.war"
-        if-no-files-found: error  # Fail the workflow if no files are found to upload
+      env:
+        JENKINS_URL: ${{ secrets.JENKINS_URL }}
+        JENKINS_JOB_TOKEN: ${{ secrets.JENKINS_JOB_TOKEN }}
+      run: |
+        curl -X POST "$JENKINS_URL/job/your-job-name/buildWithParameters?token=$JENKINS_JOB_TOKEN"
