@@ -1,17 +1,16 @@
 package com.insuredassurance;
 
-import java.io.IOException;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+public class App {
 
-@WebServlet("/welcome")
-public class WelcomeServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html");
-        response.getWriter().println("<h1>Welcome to Insured Assurance Web Page</h1>");
+    private static final String MESSAGE = "Welcome to Insured Assurance Inc!";
+
+    public App() {}
+
+    public static void main(String[] args) {
+        System.out.println(MESSAGE);
+    }
+
+    public String getMessage() {
+        return MESSAGE;
     }
 }
