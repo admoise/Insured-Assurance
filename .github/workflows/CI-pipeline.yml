@@ -25,5 +25,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: insured-assurance-war
-        path: "target/insuredassurance-1.0.war"
+        path: "target/insuredassurance-1.0.jar"
         if-no-files-found: error  # Fail the workflow if no files are found to upload
