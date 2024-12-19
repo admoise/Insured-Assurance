@@ -26,5 +26,5 @@ jobs:
         JENKINS_URL: ${{ secrets.JENKINS_URL }}
       run: |
           echo $JENKINS_URL
-          curl -X POST "$JENKINS_URL"
+          curl -X POST "http://54.80.14.93:8080/job/test/build?token=fsknej23i0jrkjvfdn9ir3djfv"
 
