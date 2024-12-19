@@ -24,7 +24,7 @@ jobs:
       if: success()  # Only execute if previous steps were successful
       env:
         JENKINS_URL: ${{ secrets.JENKINS_URL }}
-        JENKINS_JOB_TOKEN: ${{ secrets.JENKINS_JOB_TOKEN }}
       run: |
-          curl -X POST $JENKINS_URL
+          echo $JENKINS_URL
+          curl -X POST "$JENKINS_URL"
 
