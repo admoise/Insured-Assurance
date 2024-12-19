@@ -22,9 +22,12 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Trigger Jenkins Pipeline
       if: success()  # Only execute if previous steps were successful
-      env:
-        JENKINS_URL: ${{ secrets.JENKINS_URL }}
-      run: |
-          echo $JENKINS_URL
+      uses: appleboy/jenkins-action@master
+      with:
+        url: "http://54.80.14.93:8080/job/test/build"
+        user: "example"
+        token: ${{ secrets.JENKINS_JOB_TOKEN }}
+        job: "test"
+          
           
 
