@@ -22,8 +22,8 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Upload Artifact
       if: success()  # Only execute if previous steps were successful
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: insured-assurance-war
-        path: "target/insuredassurance-1.0.jar"
+        path: "target/insuredassurance.war"
         if-no-files-found: error  # Fail the workflow if no files are found to upload
