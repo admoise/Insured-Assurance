@@ -32,5 +32,5 @@ jobs:
         # user name
         user: admin
         # job/folder_name/job/job_name
-        job-path: job/test/
+        job-path: job/test
           
