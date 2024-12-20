@@ -28,7 +28,7 @@ jobs:
         TOKEN: ${{ secrets.JENKINS_TOKEN }}
       with:
         # jenkins server url
-        jenkins-url: http://23.20.208.185:8080/
+        jenkins-url: http://23.20.208.185:8080/job/test/
         # token to access jenkins server
         jenkins-token: $TOKEN
         # user name
