@@ -24,7 +24,7 @@ jobs:
       if: success()  # Only execute if previous steps were successful
       uses: estherk0/jenkins-trigger@1.0
       with:
-        url: http://34.228.156.254:8080/job/test/build?token=test
+        url: http://34.228.156.254:8080
         api_token: ${{ secrets.JENKINS_TOKEN }}
         user_name: admin
         job_name: test 
