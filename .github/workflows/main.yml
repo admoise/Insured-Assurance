@@ -28,7 +28,7 @@ jobs:
         # jenkins server url
         jenkins-url: http://23.20.208.185:8080/
         # token to access jenkins server
-        jenkins-token: ${{ secrets.JENKINS_TOKEN }}
+        jenkins-token: ${{ jenkinsdeploy.JENKINS_TOKEN }}
         # user name
         user: admin
         # job/folder_name/job/job_name
