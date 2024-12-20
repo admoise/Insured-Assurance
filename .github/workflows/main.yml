@@ -24,11 +24,13 @@ jobs:
     # You may pin to the exact commit or the version.
     # uses: yugalarora/build-jenkins-job@20b7c05fb3de0cdc08783fdcf90fc73dc686d3c1
       uses: yugalarora/build-jenkins-job@v1.0.1
+      env: 
+        TOKEN: ${{ secrets.JENKINS_TOKEN }}
       with:
         # jenkins server url
         jenkins-url: http://23.20.208.185:8080/
         # token to access jenkins server
-        jenkins-token: ${{ jenkinsdeploy.JENKINS_TOKEN }}
+        jenkins-token: $TOKEN
         # user name
         user: admin
         # job/folder_name/job/job_name
