@@ -6,6 +6,7 @@ on:
 jobs:
   trigger-jenkins:
     runs-on: ubuntu-latest
+    environment: jenkinsdeploy
     steps:
      - name: Debug Environment
        run: |
