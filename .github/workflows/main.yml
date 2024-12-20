@@ -1,0 +1,36 @@
+name: jenkins test
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    #- name: Jenkins Job Trigger
+      #if: success()  # Only execute if previous steps were successful
+      #uses: jabbukka/jenkins-trigger@main
+      #with:
+        #url: "http://23.20.208.185:8080/"
+        #api_token: ${{ secrets.JENKINS_TOKEN }}
+        #user_name: "admin"
+        #job_name: "test"
+        #wait: "true"
+        #timeout : 120
+    - name: Build Jenkins jobs
+    # You may pin to the exact commit or the version.
+    # uses: yugalarora/build-jenkins-job@20b7c05fb3de0cdc08783fdcf90fc73dc686d3c1
+      uses: yugalarora/build-jenkins-job@v1.0.1
+      with:
+        # jenkins server url
+        jenkins-url: http://23.20.208.185:8080/
+        # token to access jenkins server
+        jenkins-token: ${{ secrets.JENKINS_TOKEN }}
+        # user name
+        user: admin
+        # job/folder_name/job/job_name
+        job-path: job/test/
+          
