@@ -25,7 +25,7 @@ jobs:
       uses: jabbukka/jenkins-trigger@main
       with:
         url: "http://34.228.156.254:8080/"
-        api_token: ${{ secrets.JENKINS_TOKEN }}
+        api_token: "test"
         user_name: "admin"
         job_name: "test"
         wait: "true"
