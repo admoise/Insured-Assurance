@@ -24,7 +24,7 @@ jobs:
       if: success()  # Only execute if previous steps were successful
       uses: jabbukka/jenkins-trigger@main
       with:
-        url: "http://34.228.156.254:8080/"
+        url: "http://23.20.208.185:8080/"
         api_token: ${{ secrets.JENKINS_TOKEN }}
         user_name: "admin"
         job_name: "test"
