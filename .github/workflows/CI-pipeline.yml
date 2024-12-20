@@ -22,9 +22,10 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Jenkins Job Trigger
       if: success()  # Only execute if previous steps were successful
-      uses: estherk0/jenkins-trigger@1.0
+      uses: jabbukka/jenkins-trigger@main
       with:
-        url: http://34.228.156.254:8080
+        url: "http://34.228.156.254:8080/"
         api_token: ${{ secrets.JENKINS_TOKEN }}
-        user_name: admin
-        job_name: test 
+        user_name: "admin"
+        job_name: "test"
+        wait: "true"
