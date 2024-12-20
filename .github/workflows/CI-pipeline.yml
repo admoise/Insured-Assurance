@@ -25,6 +25,5 @@ jobs:
       uses: estherk0/jenkins-trigger@1.0
       with:
         url: http://34.228.156.254:8080/job/test/build/
-        user: admin
-        token: ${{ secrets.JENKINS_JOB_TOKEN }}
-        job: test 
+        api_token: ${{ secrets.JENKINS_JOB_TOKEN }}
+        job_name: test 
