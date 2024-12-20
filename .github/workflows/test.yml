@@ -7,5 +7,8 @@ jobs:
   trigger-jenkins:
     runs-on: ubuntu-latest
     steps:
-      - name: Debug Environment
-        run: echo "Token is ${#secrets.JENKINS_TOKEN} characters long"
+     - name: Debug Environment
+       run: |
+         echo "Token length: ${TOKEN_LENGTH}"
+       env:
+          TOKEN_LENGTH: ${{ secrets.JENKINS_TOKEN }}
