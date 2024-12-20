@@ -20,14 +20,15 @@ jobs:
         maven-version: 3.9.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Trigger Jenkins Pipeline
+    - name: Jenkins Job Trigger
       if: success()  # Only execute if previous steps were successful
-      uses: appleboy/jenkins-action@master
+      uses: estherk0/jenkins-trigger@1.0
       with:
-        url: "http://54.80.14.93:8080/job/test/build"
-        user: "example"
+        url: "http://34.228.156.254:8080/job/test/build"
+        user: ${{ secrets.JENKINS_USER }}
+        api_token: ${{ secrets.JENKINS_TOKEN }}
         token: ${{ secrets.JENKINS_JOB_TOKEN }}
         job: "test"
-          
-          
+        wait: "true"
+        timeout: "1000"      
 
