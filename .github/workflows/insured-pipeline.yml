@@ -1,0 +1,33 @@
+name: insured ci pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    environment : jenkinsdeploy
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Maven Action
+      uses: s4u/setup-maven-action@v1.7.0
+      with:
+        checkout-fetch-depth: 0
+        java-version: 17
+        java-distribution: temurin
+        maven-version: 3.9.8
+    - name: Build test
+      run: mvn -B package --file pom.xml
+    - name: Jenkins Job Trigger
+      if: success()  # Only execute if previous steps were successful
+      uses: jabbukka/jenkins-trigger@main
+      with:
+        url: ${{ secrets.JENKINS_URL }}
+        api_token: ${{ secrets.JENKINS_TOKEN }}
+        user_name: ${{ secrets.JENKINS_USER }}
+        job_name: "insured_pipeline"
+        wait: "true"
+        timeout : 120
