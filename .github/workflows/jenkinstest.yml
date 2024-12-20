@@ -26,9 +26,9 @@ jobs:
       uses: yugalarora/build-jenkins-job@v1.0.1
       with:
         # jenkins server url
-        jenkins-url: http://23.20.208.185:8080/
+        jenkins-url: http://54.227.17.102:8080/
         # token to access jenkins server
-        jenkins-token: 11fa992cfcc8bef2d9690c02e13404e8af
+        jenkins-token: ${{ secrets.JENKINS_TOKEN }}
         # user name
         user: admin
         # job/folder_name/job/job_name
